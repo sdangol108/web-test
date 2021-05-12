@@ -4,6 +4,7 @@ import { Server } from '@overnightjs/core'
 import cors from 'cors'
 import * as controllers from './controllers/index'
 import Logger from './logger'
+import express from 'express'
 
 export class RouterServer extends Server {
   constructor() {
@@ -15,6 +16,8 @@ export class RouterServer extends Server {
         origin: '*',
       })
     )
+    // this.app.use(helmet());
+    this.app.use(express.json());
     this.app.use(morgan('combined'))
     this.setupControllers()
   }
@@ -40,3 +43,5 @@ export class RouterServer extends Server {
     })
   }
 }
+
+

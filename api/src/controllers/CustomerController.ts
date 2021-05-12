@@ -1,14 +1,10 @@
 import { Controller, Get, ClassMiddleware, Post } from '@overnightjs/core'
 import { Request, Response } from 'express'
-// import { OK, BAD_REQUEST } from 'http-status-codes';
-// import { JwtManager, ISecureRequest } from '@overnightjs/jwt';
-// import { Logger } from '@overnightjs/logger';
 
-
-@Controller('test')
-export class TestController {
+@Controller('customer')
+export class CustomerController {
   @Get('/')
-  private  async getReservations(req: Request, res: Response) {
+  private  async getCustomers(req: Request, res: Response) {
 
     // const reservations = await User.findOne({ eq.params.email ? eq.params.email : '' });
     // return res.status(200)
